@@ -1,5 +1,6 @@
 import React , {useState} from 'react';
 import ReactDOM from 'react-dom';
+import AddDogButton from './AddDogButton'
 
 
 export default function ButtonContainer({setDogs, dogs}) { 
@@ -41,9 +42,7 @@ export default function ButtonContainer({setDogs, dogs}) {
   <button className="px-6 py-2 mr-5 font-bold text-white bg-red-400 border border-red-100 rounded-lg">
       Reset Dogs
     </button>
-  <button className="px-6 py-2 font-bold text-white bg-green-600 border border-green-400 rounded-lg">
-  Add Dog
-</button>
+    <AddDogButton />
     
   </div>
   </div>
