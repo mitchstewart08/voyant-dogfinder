@@ -4,9 +4,7 @@ import { useForm } from "react-hook-form";
 
 export default function NewDogForm({newDog, setNewDog}) { 
   const { register, handleSubmit, watch, errors } = useForm();
-  const onSubmit = data => console.log(data);
 
-  console.log(watch("example")); // watch input value by passing the name of it
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-full">
       <label for="name" className="text-2xl primary-font">Name:</label>

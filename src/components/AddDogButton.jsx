@@ -11,7 +11,7 @@ import {
 } from "@afc-org/react-tailwind";
 import NewDogForm from './NewDogForm'
 
-const AddDogButton = ({dog, setDogs}) => {
+const AddDogButton = ({dogs, setDogs}) => {
   const [show, setShow] = React.useState(false);
   const [newDog, setNewDog] = React.useState({
     name: null,
@@ -20,7 +20,21 @@ const AddDogButton = ({dog, setDogs}) => {
     description: null
   })
 
-  console.log('newDog ', newDog);
+  const addDog = (e) =>{
+    // e ? e.preventDefault() : ''
+    setDogs([newDog, ...dogs])
+    clearDogForm();
+  }
+
+  const clearDogForm = () =>{
+    setNewDog({
+      name: null,
+      breed: null,
+      owner: null,
+      description: null,
+    })    
+    setShow(!show)   
+  }
   
   return (
     <>
@@ -44,12 +58,12 @@ const AddDogButton = ({dog, setDogs}) => {
             <NewDogForm  newDog={newDog} setNewDog={setNewDog} />
             </ModalBody>
             <ModalFooter>
-              <Button color="pink" onClick={() => setShow(!show)}>
-                Save changes
-              </Button>
-              <Button color="gray" onClick={() => setShow(!show)}>
+              <button className="w-24 px-6 py-2 mr-4 font-bold text-white bg-green-600 border border-green-400 rounded-lg" onClick={() => addDog()}>
+                Save
+              </button>
+              <button className="px-6 py-2 font-bold text-black bg-gray-300 border border-gray-100 rounded-lg" onClick={() => clearDogForm()}>
                 Close
-              </Button>
+              </button>
             </ModalFooter>
           </ModalContent>
         </ModalDialog>
