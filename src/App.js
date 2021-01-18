@@ -1,12 +1,14 @@
 import './App.css';
+import DogList from './components/DogList'
 
 function App() {
   return (
-    <div className="App">
-      <header className="">
+    <div className="bg-gradient-to-r from-green-300 to-green-500 App">
+      <header className="text-center text-white">
       Dogs of Voyant
       </header>
-      
+      <ButtonContainer />
+      <DogList />
     </div>
   );
 }
