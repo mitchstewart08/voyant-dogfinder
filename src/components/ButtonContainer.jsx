@@ -4,13 +4,23 @@ import ReactDOM from 'react-dom';
 
 export default function ButtonContainer({setDogs, dogs}) { 
   const [input, setInput] = useState('')
+  const [previousDogs, setPreviousDogs] = useState(dogs)
+  const [isFiltered, setIsFiltered] = useState(false)
   function filterDog(e){
     
-    let filteredDogs = dogs.filter((el) => {
+    input.length ? setIsFiltered(true) : setIsFiltered(false)
+    if(input.length){
+      setPreviousDogs(dogs)
+      console.log(previousDogs)
+      let filteredDogs = dogs.filter((el) => {
         return el.name.toLowerCase().includes(input.toLowerCase())
       })
-
-    setDogs(filteredDogs)
+      console.log('filteredDogs ', filteredDogs);
+      
+      setDogs(filteredDogs)
+    } else {   
+      setDogs(previousDogs)
+    }
     }
   
   return (
