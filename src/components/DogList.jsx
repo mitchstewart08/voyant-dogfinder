@@ -1,11 +1,10 @@
 import React , {useState} from 'react';
 import ReactDOM from 'react-dom';
 import DogCard from './DogCard'
-import dogsData from '../data/dogs'
 
 
-export default function DogList() {
-  const [dogs, setDogs] = useState(dogsData);
+
+export default function DogList({dogs}) {
 
   
   return (

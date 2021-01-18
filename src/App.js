@@ -1,15 +1,18 @@
 import './App.css';
 import DogList from './components/DogList'
 import ButtonContainer from './components/ButtonContainer'
+import dogsData from './data/dogs'
+import {useState} from 'react'
 
 function App() {
+  const [dogs, setDogs] = useState(dogsData)
   return (
     <div className="bg-gradient-to-r from-green-300 to-green-500 App">
       <header className="text-center text-white">
       Dogs of Voyant
       </header>
-      <ButtonContainer />
-      <DogList />
+      <ButtonContainer set/>
+      <DogList dogs={dogs}/>
     </div>
   );
 }
