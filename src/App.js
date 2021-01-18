@@ -7,11 +7,11 @@ import {useState} from 'react'
 function App() {
   const [dogs, setDogs] = useState(dogsData)
   return (
-    <div className="bg-gradient-to-r from-green-300 to-green-500 App">
+    <div className="min-h-screen bg-gradient-to-r from-green-300 to-green-500 App">
       <header className="text-center text-white">
       Dogs of Voyant
       </header>
-      <ButtonContainer set/>
+      <ButtonContainer setDogs={setDogs} dogs={dogs}/>
       <DogList dogs={dogs}/>
     </div>
   );
