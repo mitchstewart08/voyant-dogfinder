@@ -11,14 +11,17 @@ import {
 } from "@afc-org/react-tailwind";
 import NewDogForm from './NewDogForm'
 
-const AddDogButton = () => {
+const AddDogButton = ({dog, setDogs}) => {
   const [show, setShow] = React.useState(false);
   const [newDog, setNewDog] = React.useState({
-    name: "",
-    breed: "",
-    owner: "",
-    description: ""
+    name: null,
+    breed: null,
+    owner: null,
+    description: null
   })
+
+  console.log('newDog ', newDog);
+  
   return (
     <>
       <button className="px-6 py-2 font-bold text-white bg-green-600 border border-green-400 rounded-lg" onClick={() => setShow(!show)}>
@@ -38,7 +41,7 @@ const AddDogButton = () => {
               </button>
             </ModalHead>
             <ModalBody>
-            <NewDogForm />
+            <NewDogForm  newDog={newDog} setNewDog={setNewDog} />
             </ModalBody>
             <ModalFooter>
               <Button color="pink" onClick={() => setShow(!show)}>
