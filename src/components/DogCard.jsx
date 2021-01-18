@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom';
 
 export default function DogCard({dog}) { 
   return (
-    <div className="w-1/3 p-4 min-w-min">
-      <div className="flex justify-between w-11/12 p-4 mx-auto text-justify bg-white border-2 border-green-100 border-solid rounded-lg">
+    <div className="w-1/3 py-4">
+      <div className="flex justify-between w-11/12 p-4 mx-auto text-justify bg-white border-2 border-green-100 border-solid rounded-lg h-60">
         <div className="">
         <p className="mb-2"><span className="text-lg font-bold primary-font">Name: </span>{dog.name}</p>
         <p className="mb-2"><span className="text-lg font-bold primary-font">Breed: </span>{dog.breed}</p>

@@ -24,18 +24,27 @@ export default function ButtonContainer({setDogs, dogs}) {
     }
   
   return (
-  <div>
-  <div class="p-8 w-1/3">
-    <div class="bg-white flex items-center rounded-full shadow-xl">
-      <input class="rounded-l-full w-full py-4 px-6 text-gray-700 leading-tight focus:outline-none" id="search" type="text" placeholder="Search by Dog Name" 
+  <div className="flex justify-between">
+  <div class=" w-1/3 pb-4" id="searchBox">
+    <div className="flex items-center bg-white rounded-full shadow-xl">
+      <input className="w-full px-6 py-4 leading-tight text-gray-700 rounded-l-full focus:outline-none" id="search" type="text" placeholder="Search by Dog Name" 
         onChange={e => setInput(e.target.value)}
       />
-      <div class="p-4">
-        <button class="bg-green-300 text-white rounded-full p-2 hover:bg-green-200 focus:outline-none w-12 h-12 flex items-center justify-center">
-          <span class="text-3xl" onClick={filterDog}>🦴</span>
+      <div className="p-4">
+        <button className="flex items-center justify-center w-12 h-12 p-2 text-white bg-green-300 rounded-full hover:bg-green-200 focus:outline-none">
+          <span className="text-3xl" onClick={filterDog}>🦴</span>
         </button>
         </div>
       </div>
+  </div>
+  <div className="align-middle w-1/8" id="buttons">
+  <button className="px-6 py-2 mr-5 font-bold text-white bg-red-400 border border-red-100 rounded-lg">
+      Reset Dogs
+    </button>
+  <button className="px-6 py-2 font-bold text-white bg-green-600 border border-green-400 rounded-lg">
+  Add Dog
+</button>
+    
   </div>
   </div>
 )
