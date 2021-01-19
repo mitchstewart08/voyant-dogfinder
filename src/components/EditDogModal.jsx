@@ -108,7 +108,7 @@ const AddDogButton = ({dog, dogs, setDogs, show, setShow}) => {
               <button className="w-24 px-6 py-2 mr-4 font-bold text-white bg-green-600 border border-green-400 rounded-lg"  onClick={saveEdit}>
                 Save
               </button>
-              <button className="px-6 py-2 font-bold text-black bg-gray-300 border border-gray-100 rounded-lg" >
+              <button className="px-6 py-2 font-bold text-black bg-gray-300 border border-gray-100 rounded-lg"  onClick={()=>{setShow(!show)}}>
                 Close
               </button>
             </ModalFooter>
