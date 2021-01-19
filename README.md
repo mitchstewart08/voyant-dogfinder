@@ -21,8 +21,10 @@ If more time is spent on this project these are the changes I would make going f
 
 1. Add tests using Jest and Cypress
 2. Refactor components to use Context instead of props. Perhaps a simple state machine or redux if the project grew in complexity
-3. Add user authentication
-4. Store data in firebase
+3. Refactor Add/Edit Breed and Size to dropdowns
+4. Add user authentication
+5. Store data in firebase
+6. Allow photo upload of dog, or have default Dog icon if none provided
 
 ## Credits and Technologies
 
