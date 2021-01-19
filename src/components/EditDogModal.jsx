@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Button,
   Modal,
   ModalBody,
   ModalContent,
@@ -9,11 +8,10 @@ import {
   ModalHead,
   ModalTitle
 } from "@afc-org/react-tailwind";
-import NewDogForm from './NewDogForm'
 import { useForm } from "react-hook-form";
 
 const AddDogButton = ({dog, dogs, setDogs, show, setShow}) => {
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { register} = useForm();
 
   const [newDog, setNewDog] = React.useState({
     name: dog.name,
@@ -25,7 +23,7 @@ const AddDogButton = ({dog, dogs, setDogs, show, setShow}) => {
   function saveEdit(){
       
     let newDogsArr = dogs.map((el) => {
-      if(el.owner == dog.owner && el.name == dog.name){
+      if(el.owner === dog.owner && el.name === dog.name){
         return newDog
       }else{
         return el;
@@ -36,10 +34,9 @@ const AddDogButton = ({dog, dogs, setDogs, show, setShow}) => {
   }
 
   function deleteDog(){
-    let name = dog.name;
     let newDogsArr = dogs.filter((el) => {
-      if(el.owner == dog.owner && el.name == dog.name){
-        return
+      if(el.owner === dog.owner && el.name === dog.name){
+        return false;
       }else{
         return el;
       }

@@ -1,9 +1,8 @@
-import React , {useState} from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 import { useForm } from "react-hook-form";
 
 export default function NewDogForm({newDog, setNewDog}) { 
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { register} = useForm();
 
   return (
     <form className="flex flex-col w-full">

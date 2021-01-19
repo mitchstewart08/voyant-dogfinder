@@ -1,23 +1,19 @@
 import React , {useState} from 'react';
-import ReactDOM from 'react-dom';
 import AddDogButton from './AddDogButton'
+import dogData from '../data/dogs'
 
 
 export default function ButtonContainer({setDogs, dogs}) { 
   const [input, setInput] = useState('')
   const [previousDogs, setPreviousDogs] = useState(dogs)
-  const [isFiltered, setIsFiltered] = useState(false)
   function filterDog(e){
     
-    input.length ? setIsFiltered(true) : setIsFiltered(false)
     if(input.length){
       setPreviousDogs(dogs)
       console.log(previousDogs)
       let filteredDogs = dogs.filter((el) => {
         return el.name.toLowerCase().includes(input.toLowerCase())
-      })
-      console.log('filteredDogs ', filteredDogs);
-      
+      })      
       setDogs(filteredDogs)
     } else {   
       setDogs(previousDogs)
@@ -39,7 +35,7 @@ export default function ButtonContainer({setDogs, dogs}) {
       </div>
   </div>
   <div className="py-4 align-middle w-1/8" id="buttons">
-  <button className="px-6 py-2 mr-5 font-bold text-white bg-red-400 border border-red-100 rounded-lg">
+    <button className="px-6 py-2 mr-5 font-bold text-white bg-red-400 border border-red-100 rounded-lg" onClick={()=>setDogs(dogData)}>
       Reset Dogs
     </button>
     <AddDogButton dogs={dogs} setDogs={setDogs}/>
