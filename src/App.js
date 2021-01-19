@@ -13,7 +13,7 @@ function App() {
       <Logo className="w-16 h-16 pt-3 mr-4 text-white bg-white rounded-full focus:outline-none" /> <span className="text-6xl primary-font">Dogs of Voyant</span>
       </div>
       <ButtonContainer setDogs={setDogs} dogs={dogs}/>
-      <DogList dogs={dogs}/>
+      <DogList dogs={dogs} setDogs={setDogs}/>
     </div>
   );
 }

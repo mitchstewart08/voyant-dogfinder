@@ -6,7 +6,7 @@ export default function NewDogForm({newDog, setNewDog}) {
   const { register, handleSubmit, watch, errors } = useForm();
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-full">
+    <form className="flex flex-col w-full">
       <label for="name" className="text-2xl primary-font">Name:</label>
       <input name="name" placeholder="Scout" ref={register} className="mb-8 border-2 border-gray-200 border-solid"
         onChange={(e) => {
