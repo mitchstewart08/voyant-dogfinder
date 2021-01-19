@@ -27,6 +27,13 @@ export default function NewDogForm({newDog, setNewDog}) {
         }}
       />
       
+      <label for="size" className="text-2xl primary-font">Size:</label>
+      <input name="size" placeholder="MD" ref={register} className="mb-8 border-2 border-gray-200 border-solid"
+         onChange={(e) => {
+          setNewDog({...newDog, size: e.target.value})
+        }}
+      />
+      
       <label for="description" className="text-2xl primary-font">Description:</label>
       <textarea name="description" placeholder="Likes to eat expensive shoes" ref={register} className="border-2 border-gray-200 border-solid"
          onChange={(e) => {
