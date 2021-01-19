@@ -11,7 +11,6 @@ export default function ButtonContainer({setDogs, dogs}) {
     if(input.length){
       setIsFiltered(true)
       setPreviousDogs(dogs)
-      console.log(previousDogs)
       let filteredDogs = dogs.filter((el) => {
         return el.name.toLowerCase().includes(input.toLowerCase())
       })      
