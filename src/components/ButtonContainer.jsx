@@ -25,8 +25,8 @@ export default function ButtonContainer({setDogs, dogs}) {
     }
   
   return (
-  <div className="flex justify-between">
-  <div class=" w-1/3 pb-4" id="searchBox">
+  <div className="flex flex-wrap justify-between md:flex-nowrap">
+  <div class=" md:w-1/3 pb-4 w-full" id="searchBox">
     <div className="flex items-center bg-white rounded-full shadow-xl">
       <input className="w-full px-6 py-4 leading-tight text-gray-700 rounded-l-full focus:outline-none" id="search" type="text" placeholder="Search by Dog Name" 
         onChange={e => setInput(e.target.value)}
@@ -38,7 +38,7 @@ export default function ButtonContainer({setDogs, dogs}) {
         </div>
       </div>
   </div>
-  <div className="align-middle w-1/8" id="buttons">
+  <div className="py-4 align-middle w-1/8" id="buttons">
   <button className="px-6 py-2 mr-5 font-bold text-white bg-red-400 border border-red-100 rounded-lg">
       Reset Dogs
     </button>
