@@ -6,9 +6,10 @@ import dogData from '../data/dogs'
 export default function ButtonContainer({setDogs, dogs}) { 
   const [input, setInput] = useState('')
   const [previousDogs, setPreviousDogs] = useState(dogs)
+  const [isFiltered, setIsFiltered] = useState(false)
   function filterDog(e){
-    
     if(input.length){
+      setIsFiltered(true)
       setPreviousDogs(dogs)
       console.log(previousDogs)
       let filteredDogs = dogs.filter((el) => {
@@ -19,6 +20,12 @@ export default function ButtonContainer({setDogs, dogs}) {
       setDogs(previousDogs)
     }
     }
+
+   function resetSearch(){
+     setIsFiltered(false)
+     setInput("");
+     setDogs(previousDogs)
+   }
   
   return (
   <div className="flex flex-wrap justify-between md:flex-nowrap">
@@ -29,7 +36,7 @@ export default function ButtonContainer({setDogs, dogs}) {
       />
       <div className="p-4">
         <button className="flex items-center justify-center w-12 h-12 p-2 text-white bg-green-300 rounded-full hover:bg-green-200 focus:outline-none">
-          <span className="text-3xl" onClick={filterDog}>🦴</span>
+          {!isFiltered ? <span className="text-3xl" onClick={filterDog}>🦴</span> : <span className="text-lg primary-font" onClick={resetSearch}>Back</span>}
         </button>
         </div>
       </div>
