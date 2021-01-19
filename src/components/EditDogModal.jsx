@@ -74,6 +74,13 @@ const AddDogButton = ({dog, dogs, setDogs, show, setShow}) => {
                 setNewDog({...newDog, owner: e.target.value})
               }}
             />
+
+            <label for="size" className="text-2xl primary-font">Size:</label>
+            <input name="size" placeholder="Mitch" ref={register} defaultValue={dog.size}  className="mb-8 border-2 border-gray-200 border-solid"
+              onChange={(e) => {
+                setNewDog({...newDog, size: e.target.value})
+              }}
+            />
             
             <label for="description" className="text-2xl primary-font">Description:</label>
             <textarea name="description" placeholder="Likes to eat expensive shoes" ref={register} defaultValue={dog.description}  className="border-2 border-gray-200 border-solid"
